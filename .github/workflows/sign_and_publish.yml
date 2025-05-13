@@ -1,0 +1,52 @@
+name: Sign and Publish Badge
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  sign_badge:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Git
+        run: |
+          git config user.name "AtlantydeBot"
+          git config user.email "bot@atlantyde.org"
+
+      - name: Generar Badge SVG
+        run: |
+          echo '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+          <circle cx="100" cy="100" r="90" stroke="#004c4c" stroke-width="10" fill="#f0f4f4"/>
+          <text x="50%" y="50%" text-anchor="middle" fill="#004c4c" font-size="20px" font-family="Arial" dy=".3em">LAB-000</text>
+          </svg>' > badges/LAB-000.svg
+
+      - name: Calcular Hash del badge
+        id: hash
+        run: |
+          SHA=$(sha256sum badges/LAB-000.svg | cut -d' ' -f1)
+          echo "sha=$SHA" >> $GITHUB_OUTPUT
+
+      - name: Simular Firma PGP (mock)
+        run: |
+          echo "Badge: LAB-000" > badges/LAB-000-log.txt
+          echo "Contributor: ${{ github.actor }}" >> badges/LAB-000-log.txt
+          echo "SHA256: ${{ steps.hash.outputs.sha }}" >> badges/LAB-000-log.txt
+          echo "Signed-by: AtlantydeBot" >> badges/LAB-000-log.txt
+          echo "Date: $(date -u +'%Y-%m-%d')" >> badges/LAB-000-log.txt
+          echo "Signature: -----BEGIN PGP SIGNATURE-----" >> badges/LAB-000-log.txt
+          echo "MockSignatureBase64" >> badges/LAB-000-log.txt
+          echo "-----END PGP SIGNATURE-----" >> badges/LAB-000-log.txt
+
+      - name: Commit y push
+        run: |
+          git add badges/
+          git commit -m "🤖 Badge LAB-000 generado y firmado para ${{ github.actor }}"
+          git push

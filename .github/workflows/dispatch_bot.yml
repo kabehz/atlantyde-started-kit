@@ -1,0 +1,49 @@
+name: Dispatch Bot for Badge Issuance and Progress Tracking
+
+# Este flujo de trabajo se ejecuta cuando se realiza un `push` o se crea un `pull_request`.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  dispatch_bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Instalar dependencias necesarias
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      # Ejecutar el bot para emitir badges
+      - name: Run AtlantydeBot to issue badges and track progress
+        run: |
+          python dispatch_bot.py --event "badge_issued" --user ${GITHUB_ACTOR}
+
+      # Crear un issue para notificar sobre el progreso de Labs completados
+      - name: Create Issue for Lab Completion
+        run: |
+          gh issue create --title "🚀 LAB-Completion - ${GITHUB_ACTOR}" \
+            --body "El usuario ${GITHUB_ACTOR} ha completado el Lab ${LAB_NAME}. ¡Felicidades! 🎉" \
+            --label "lab-completion,badge-issued,progress"
+        
+      # (Opcional) Enviar notificación o post en un canal de Slack o similar
+      - name: Send Notification to Slack (Optional)
+        if: success()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+            --data '{"text":"El usuario ${GITHUB_ACTOR} ha completado el Lab y ha recibido un badge."}' \
+            $SLACK_WEBHOOK_URL
+

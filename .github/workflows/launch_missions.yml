@@ -1,0 +1,54 @@
+name: Launch Missions
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'GitHub username del nuevo fork'
+        required: true
+
+jobs:
+  create_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Crear issue 1 – LAB-000 Onboarding
+        uses: peter-evans/create-issue@v4
+        with:
+          title: "🚀 Tu primera misión: LAB-000 (Onboarding)"
+          body: |
+            ¡Bienvenido a ATLANTYDE, @${{ github.event.inputs.username }}! 🎓
+
+            🧭 Esta es tu primera misión en el ecosistema.
+
+            **Objetivo:** Completa el Lab de Onboarding `LAB-000`.
+
+            **Pasos:**
+            - [ ] Clona el repositorio
+            - [ ] Lee el `README.md` y `docs/labs/lab-000.md`
+            - [ ] Abre un Pull Request con tu primer perfil digital
+            - [ ] Menciónanos con `@AtlantydeBot` para firmar tu badge
+
+            💡 Recuerda: todo lo que subas será parte de tu reputación digital verificable.
+
+            ¡Comienza tu viaje!
+
+          assignees: ${{ github.event.inputs.username }}
+
+      - name: Crear issue 2 – LAB-M00 Perfil Digital
+        uses: peter-evans/create-issue@v4
+        with:
+          title: "🧠 Tu misión LAB-M00: Crear tu perfil digital"
+          body: |
+            Ahora que ya estás a bordo, @${{ github.event.inputs.username }}, toca crear tu **perfil profesional** en Markdown.
+
+            📌 Archivo sugerido: `docs/perfil-${{ github.event.inputs.username }}.md`
+
+            **Incluye:**
+            - Nombre + alias
+            - Tecnologías dominadas
+            - Contribución deseada en ATLANTYDE
+            - Experiencias educativas / Labs completados
+
+            Una vez aprobado, serás oficialmente miembro de la comunidad 🧪
+
+            ¡Estamos deseando leerte!
+          assignees: ${{ github.event.inputs.username }}
