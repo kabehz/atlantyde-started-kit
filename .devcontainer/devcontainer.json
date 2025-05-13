@@ -1,0 +1,16 @@
+{
+  "name": "AtlantydeKit Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-vscode.makefile-tools",
+    "GitHub.vscode-pull-request-github"
+  ],
+  "forwardPorts": [8000, 3000],
+  "postCreateCommand": "make validate"
+}
