@@ -1,34 +1,4 @@
-# Atlantyde Docs SDLC ![Manifest Sync](https://img.shields.io/badge/manifest-up%20to%20date-brightgreen.svg)
-
-Repositorio consolidado para documentación técnica y SDLC europeo.
-
-## Contenido
-
-- 📂 `docs/`: documentación fuente unificada
-- 🧪 `Makefile`: automatización local
-- ⚙️ `scripts/`: validadores semánticos y estructurales
-- 🔁 `.github/workflows/`: CI de documentación y manifest
-- 📦 `CHANGELOG.md` y `manifest.json`
-
-## Automatización
-
-Este bundle incluye integración CI/CD con:
-
-- Validación de `frontmatter`, fechas, enlaces, autores
-- Generación automática de `_toc.md` por carpeta
-- Actualización automática de `manifest.json` en cada PR mergeado
-
-## Visualización
-
-Compatible con:
-
-- Astro Docs
-- MkDocs
-- Docusaurus
-
----
-
-## 🧭 ATLANTYDE Labs – Generador Universal de Proyectos Educativos y Éticos
+# 🧭 ATLANTYDE Labs – Generador Universal de Proyectos Educativos y Éticos
 
 Este repositorio representa el **sello de garantía educativo y técnico de ATLANTYDE**, que permite generar, firmar y gamificar proyectos basados en tecnologías abiertas, trazabilidad digital y aprendizaje significativo.
 
@@ -102,7 +72,7 @@ features:
   - origen: markdown firmado
   - tipo: educativo open source
   - labs: gamificados + certificados
-  - deploy: astro|mkdocs|docusaurus
+  - deploy: astro/mkdocs/docusaurus
   - insignias: svg + .asc
 ```
 

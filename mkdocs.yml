@@ -1,23 +1,7 @@
-site_name: ATLANTYDE Labs Docs
+
 nav:
-  - Introducción: index.md
-  - Labs:
-    - LAB-000: docs/labs/lab-000.md
-    - LAB-001: docs/labs/lab-001.md
-    - LAB-002: docs/labs/lab-002.md
-    - LAB-003: docs/labs/lab-003.md
-    - LAB-004: docs/labs/lab-004.md
-    - LAB-005: docs/labs/lab-005.md
-    - LAB-006: docs/labs/lab-006.md
-    - LAB-007: docs/labs/lab-007.md
-    - LAB-008: docs/labs/lab-008.md
-    - LAB-009: docs/labs/lab-009.md
-    - LAB-010: docs/labs/lab-010.md
-    - LAB-011: docs/labs/lab-011.md
-    - LAB-012: docs/labs/lab-012.md
-    - LAB-013: docs/labs/lab-013.md
-    - LAB-014: docs/labs/lab-014.md
-    - LAB-015: docs/labs/lab-015.md
-theme:
-  name: material
-  language: es
+  - Inicio: index.md
+  - Laboratorios:
+      - Lab 000: labs/lab-000.md
+  - Guías:
+      - Especificación Frontmatter: guide/frontmatter-spec.md
