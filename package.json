@@ -1,0 +1,15 @@
+{
+  "name": "atlantyde-labs-universal-docs",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^3.0.0",
+    "@astrojs/mdx": "^2.0.0",
+    "@astrojs/sitemap": "^2.0.0",
+    "@astrojs/content": "^2.0.0"
+  }
+}

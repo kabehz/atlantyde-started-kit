@@ -1,0 +1,23 @@
+---
+name: tldr-pages
+desc: A community-curated collection of simplified and example-driven man pages.
+site: https://tldr-pages.github.io/
+tags:
+- reference
+- documentation
+- markdown
+- man
+- manpage
+- manual
+- command-line
+- console
+- terminal
+- shell
+- cli
+upforgrabs:
+  name: help wanted
+  link: https://github.com/tldr-pages/tldr/labels/help%20wanted
+stats:
+  issue-count: 135
+  last-updated: '2025-05-12T08:43:37Z'
+  fork-count: 4445

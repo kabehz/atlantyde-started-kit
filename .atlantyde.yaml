@@ -1,0 +1,7 @@
+bot_version: "1.0.0"
+validated_by: "jaimesilva"
+roles: ["issuer", "dispatcher", "validator"]
+features:
+  - badge_svg_signing
+  - github_workflow_automation
+  - educational_issue_launcher

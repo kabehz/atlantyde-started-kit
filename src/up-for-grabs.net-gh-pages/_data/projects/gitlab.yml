@@ -1,0 +1,21 @@
+---
+name: GitLab
+desc: >-
+  GitLab is the most comprehensive AI-powered DevSecOps Platform. Everyone can contribute to
+  GitLab
+site: https://about.gitlab.com
+tags:
+- git
+- ruby
+- rails
+- javascript
+- vuejs
+- web
+- go
+- terraform
+- devops
+- devsecops
+- ai
+upforgrabs:
+  name: Seeking Community Contributions
+  link: https://gitlab.com/groups/gitlab-org/-/issues/?sort=created_date&state=opened&label_name%5B%5D=Seeking%20community%20contributions&first_page_size=100

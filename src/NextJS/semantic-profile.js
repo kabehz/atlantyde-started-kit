@@ -1,0 +1,1 @@
+// Next.js semantic API mock

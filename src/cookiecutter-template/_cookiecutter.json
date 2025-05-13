@@ -1,0 +1,11 @@
+{
+  "project_slug": "atlantyde-labs",
+  "author_name": "Jaime Silva",
+  "default_lang": "es",
+  "repo_type": "multi-i18n-docs",
+  "features": [
+    "astro",
+    "ci_cd",
+    "content_collections"
+  ]
+}

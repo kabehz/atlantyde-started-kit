@@ -1,0 +1,24 @@
+---
+name: Nextcloud
+desc: A safe home for all your data
+site: https://nextcloud.com
+tags:
+- javascript
+- web
+- php
+- design
+- html
+- css
+- database
+- privacy
+- android
+- ios
+- c++
+- qt
+upforgrabs:
+  name: good first issue
+  link: https://github.com/nextcloud/server/labels/good%20first%20issue
+stats:
+  issue-count: 80
+  last-updated: '2025-05-11T13:35:36Z'
+  fork-count: 4263
