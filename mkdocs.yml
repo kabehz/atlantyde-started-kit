@@ -1,6 +1,6 @@
 site_name: ATLANTYDE Labs Docs
 nav:
-  - Introducción: docs/labs/index.md
+  - Introducción: index.md
   - Labs:
     - LAB-000: docs/labs/lab-000.md
     - LAB-001: docs/labs/lab-001.md

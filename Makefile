@@ -32,3 +32,34 @@ deploy:
 local:
 	@echo "🚀 Ejecutando el entorno localmente en Docker..."
 	docker-compose -f docker-compose.fullstack.yml up --build
+# Generación de Documentación
+
+docs-astro:
+	@echo "📘 Astro - Iniciando entorno de documentación..."
+	cd astro-docs && npm install && npm run dev
+
+docs-mkdocs:
+	@echo "📘 MkDocs - Servidor local en puerto 8000..."
+	cd mkdocs-docs && pip install -r requirements.txt && mkdocs serve
+
+docs-docusaurus:
+	@echo "📘 Docusaurus - Iniciando documentación local..."
+	cd docusaurus-docs && npm install && npm run start
+
+# Construcción de Documentación
+
+docs-build-astro:
+	@echo "🏗️ Compilando documentación Astro..."
+	cd astro-docs && npm install && npm run build
+
+docs-build-mkdocs:
+	@echo "🏗️ Compilando documentación MkDocs..."
+	cd mkdocs-docs && pip install -r requirements.txt && mkdocs build
+
+docs-build-docusaurus:
+	@echo "🏗️ Compilando documentación Docusaurus..."
+	cd docusaurus-docs && npm install && npm run build
+
+docs-export-pdf:
+	@echo "🖨️ Exportando PDF desde MkDocs..."
+	cd mkdocs-docs && mkdocs build && mkdocs pdf-export

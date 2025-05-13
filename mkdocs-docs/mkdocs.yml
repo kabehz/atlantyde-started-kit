@@ -1,0 +1,7 @@
+site_name: Atlantyde Docs (MkDocs)
+theme:
+  name: material
+  language: es
+nav:
+  - Introducción: index.md
+  - Roadmap: Roadmap_Learning_by_Doing.md

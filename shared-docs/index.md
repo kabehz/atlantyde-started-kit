@@ -1,3 +1,4 @@
+
 # 🧭 ATLANTYDE Labs – Generador Universal de Proyectos Educativos y Éticos
 
 Este repositorio representa el **sello de garantía educativo y técnico de ATLANTYDE**, que permite generar, firmar y gamificar proyectos basados en tecnologías abiertas, trazabilidad digital y aprendizaje significativo.

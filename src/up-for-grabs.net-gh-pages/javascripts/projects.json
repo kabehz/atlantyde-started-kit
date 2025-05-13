@@ -1,5 +1,0 @@
----
----
-{{ site.data.projects | jsonify }}
-
-
