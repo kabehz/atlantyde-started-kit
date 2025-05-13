@@ -1,9 +1,6 @@
+
 module.exports = {
   tutorialSidebar: [
-        {
-      type: 'doc',
-      id: 'index',
-    },
     {
       type: 'category',
       label: 'Guías Principales',

@@ -1,0 +1,27 @@
+
+name: 📡 Actualizar Taxonomía desde GitHub
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'  # Cada lunes a las 3am UTC
+  workflow_dispatch:
+
+jobs:
+  update-taxosem:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Actualizar archivo de taxonomía
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          sed -i "s|ghp_xxx|${GITHUB_TOKEN}|" scripts/update_taxonomy_from_github.py
+          python3 scripts/update_taxonomy_from_github.py
+
+      - name: Verificar resultado
+        run: cat taxonomy_keywords_updated.json
